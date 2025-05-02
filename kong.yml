@@ -1,0 +1,33 @@
+_format_version: "2.1"
+
+services:
+  - name: admisiones-service
+    url: http://admisiones_upstream
+    routes:
+      - name: admisiones-route
+        paths:
+          - /admisiones
+        strip_path: true
+
+upstreams:
+  - name: admisiones_upstream
+    algorithm: round-robin
+    healthchecks:
+      threshold: 50
+      active:
+        http_path: /health/
+        healthy:
+          interval: 10
+          successes: 2
+        unhealthy:
+          interval: 7
+          http_failures: 2
+          tcp_failures: 1
+          timeouts: 1
+    targets:
+      - target: <ip-privada-admisiones-a>:8080
+        weight: 100
+      - target: <ip-privada-admisiones-b>:8080
+        weight: 100
+      - target: <ip-privada-admisiones-c>:8080
+        weight: 100

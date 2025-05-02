@@ -74,8 +74,12 @@ WSGI_APPLICATION = 'experimento_disponibilidad.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'admisiones_db',
+        'USER': 'usuario_db',
+        'PASSWORD': 'clave_db',
+        'HOST': 'IP_o_hostname',  # puede ser 'localhost' o una IP privada en GCP
+        'PORT': '5432',
     }
 }
 
