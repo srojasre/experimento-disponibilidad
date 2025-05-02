@@ -79,7 +79,7 @@ DATABASES = {
         'NAME': 'admisiones_db',
         'USER': 'admin',
         'PASSWORD': 'ClaveFuerte123',
-        'HOST': '10.73.176.0',  # lo verás en detalles de la instancia
+        'HOST': '10.73.176.3',  # lo verás en detalles de la instancia
         'PORT': '5432',
     }
 }
