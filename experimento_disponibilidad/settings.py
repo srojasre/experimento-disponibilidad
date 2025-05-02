@@ -77,12 +77,13 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'admisiones_db',
-        'USER': 'usuario_db',
-        'PASSWORD': 'clave_db',
-        'HOST': 'IP_o_hostname',  # puede ser 'localhost' o una IP privada en GCP
+        'USER': 'admin',
+        'PASSWORD': 'ClaveFuerte123',
+        'HOST': '10.73.176.0',  # lo verás en detalles de la instancia
         'PORT': '5432',
     }
 }
+
 
 
 # Password validation
